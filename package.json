@@ -1,0 +1,31 @@
+{
+  "name": "got-battle-web-app",
+  "version": "1.0.0",
+  "description": "Game of Throne Battle Web App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilnayak0206/GoT-Battle-Web-App.git"
+  },
+  "author": "Akhil Nayak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akhilnayak0206/GoT-Battle-Web-App/issues"
+  },
+  "homepage": "https://github.com/akhilnayak0206/GoT-Battle-Web-App#readme",
+  "dependencies": {
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.1",
+    "mongoose": "^5.8.6"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "nodemon": "^2.0.2"
+  }
+}
