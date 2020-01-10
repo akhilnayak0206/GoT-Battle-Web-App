@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     res.json(totalBattles);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error Jaime Lannister');
+    res.status(500).send('Server Error Tywin Lannister');
   }
 });
 
