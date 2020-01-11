@@ -8,8 +8,28 @@ const Battles = require('../../models/Battles');
 //@access  Public
 router.get('/', async (req, res) => {
   try {
-    const locations = await Battles.find().select('location');
-    res.json(locations);
+    console.log(req.query.autocomplete);
+
+    //if query is not there then return locations
+    if (!req.query.autocomplete) {
+      const locations = await Battles.find().select('location');
+      return res.json(locations);
+    }
+
+    //filteredLocations will give all locations that have the matching string
+    const filteredLocations = await Battles.find({
+      location: { $regex: req.query.autocomplete, $options: 'i' }
+    }).select('location');
+
+    // autoCompleteResults will give all locations whose query is matching with the starting index of the locations
+    const autoCompleteResults = filteredLocations.filter(
+      obj =>
+        obj.location
+          .toLowerCase()
+          .indexOf(req.query.autocomplete.toLowerCase()) === 0
+    );
+
+    res.json(autoCompleteResults);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error Jaime Lannister');
