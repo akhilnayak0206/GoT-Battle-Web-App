@@ -21,6 +21,6 @@ const connectDB = async () => {
 };
 
 //Remove this in production.
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
 
 module.exports = connectDB;
