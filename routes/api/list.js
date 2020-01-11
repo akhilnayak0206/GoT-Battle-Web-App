@@ -8,8 +8,20 @@ const Battles = require('../../models/Battles');
 //@access  Public
 router.get('/', async (req, res) => {
   try {
-    console.log(req.query.autocomplete);
+    const locations = await Battles.find().select('location');
 
+    res.json(locations);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error Jaime Lannister');
+  }
+});
+
+//@route   GET /list/autocomplete
+//@desc    Get filtered list.
+//@access  Public
+router.get('/autocomplete', async (req, res) => {
+  try {
     //if query is not there then return locations
     if (!req.query.autocomplete) {
       const locations = await Battles.find().select('location');
