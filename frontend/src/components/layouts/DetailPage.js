@@ -81,17 +81,21 @@ const DetailPage = ({ location: { state } }) => {
               <h1 className='kingName'>{obj.defender_king}</h1>
               <h1 className='kingName'>Defender</h1>
             </div>
-            <Button
-              className='viewDetails'
-              onClick={showModal}
+            <div
               style={{
                 position: 'fixed',
                 alignSelf: 'flex-end',
                 bottom: '15%'
               }}
             >
-              View Details
-            </Button>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <Button onClick={showModal}>View Details</Button>
+
+                <Button style={{ marginTop: '5px' }}>
+                  <Link to='/'>Search Battles</Link>
+                </Button>
+              </div>
+            </div>
           </section>
         </Fragment>
       ) : (
