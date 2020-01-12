@@ -35,7 +35,6 @@ p {
   display: flex !important ;
   flex: 1;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   margin: 15px;
 }
@@ -51,7 +50,6 @@ p {
 .ant-list {
   font-family: 'Courier New', Courier;
   width: 100%;
-  /* background-color: wheat; */
   color: white;
 }
 
@@ -65,7 +63,6 @@ p {
 .detailPageContainer {
   display: flex !important ;
   flex: 1;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin: 25px;
@@ -102,7 +99,6 @@ img.attackerDefender {
   border-radius: 50%;
   width: 15vh;
   height: 15vh;
-  /* background: url('./img/A.png') no-repeat center center/cover; */
 }
 
 h1.kingName {

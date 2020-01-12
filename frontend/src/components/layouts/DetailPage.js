@@ -10,9 +10,9 @@ const DetailPage = ({ location: { state } }) => {
     obj &&
     Object.keys(obj).map(
       key =>
-        key != '_id' &&
-        key != 'id' &&
-        obj[key] != '' && (
+        key !== '_id' &&
+        key !== 'id' &&
+        obj[key] !== '' && (
           <tr key={key}>
             <th>{key}</th>
             <td>{obj[key]}</td>
@@ -50,22 +50,14 @@ const DetailPage = ({ location: { state } }) => {
             >
             <table style={{ width: '100%' }}>
               <thead />
-              <tbody>
-                {obj && verticalTable}
-                {/* <tr>
-              <th>Name:</th>
-              <td>
-                Bill Gateskhsdbvjhsa skcjasc skjbcja skHbhb chsachc vshcvcvhc
-                bsc hbsa chasc shcbashcvchas
-              </td>
-            </tr> */}
-              </tbody>
+              <tbody>{obj && verticalTable}</tbody>
             </table>
           </Modal>
           <section className='detailPageContainer'>
             <h1 className='detailPage'>{obj.name}</h1>
             <div className='cardAttacker'>
               <h1 className='wonLost'>
+                {/*  eslint-disable-next-line */}
                 {obj.attacker_outcome == 'win' ? 'Win' : 'Defeat'}
               </h1>
               <img
@@ -75,12 +67,10 @@ const DetailPage = ({ location: { state } }) => {
               />
               <h1 className='kingName'>{obj.attacker_king}</h1>
               <h1 className='kingName'>Attacker</h1>
-              {/* <Button onClick={showModal} style={{ marginTop: '5px' }}>
-            Details
-          </Button> */}
             </div>
             <div className='cardDefender'>
               <h1 className='wonLost'>
+                {/*  eslint-disable-next-line */}
                 {obj.attacker_outcome == 'win' ? 'Defeat' : 'Win'}
               </h1>
               <img
@@ -90,7 +80,6 @@ const DetailPage = ({ location: { state } }) => {
               />
               <h1 className='kingName'>{obj.defender_king}</h1>
               <h1 className='kingName'>Defender</h1>
-              {/* <Button style={{ marginTop: '5px' }}>Details</Button> */}
             </div>
             <Button
               className='viewDetails'

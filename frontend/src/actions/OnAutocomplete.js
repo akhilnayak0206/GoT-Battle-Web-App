@@ -11,6 +11,7 @@ export const OnAutocomplete = query => async dispatch => {
     }
     let tempArray = res.data;
     let tempLocation = [];
+    // eslint-disable-next-line
     tempArray.map(data => {
       tempLocation.push(data.location);
     });

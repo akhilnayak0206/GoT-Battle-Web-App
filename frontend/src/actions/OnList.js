@@ -6,6 +6,7 @@ export const OnList = () => async dispatch => {
     const res = await axios.get('/list');
     let tempArray = res.data;
     let tempLocation = [];
+    // eslint-disable-next-line
     tempArray.map(data => {
       tempLocation.push(data.location);
     });

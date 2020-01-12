@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import { Card, List, Carousel, Button } from 'antd';
+import { Card, Button } from 'antd';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -14,15 +14,12 @@ const gridStyle = {
   width: '100%',
   marginBottom: '2%',
   fontFamily: `'Courier New', Courier`
-  // padding: '10px'
 };
 
-const BattleList = ({ OnSearch, search, match, history }) => {
+const BattleList = ({ OnSearch, search, match }) => {
   useEffect(() => {
     OnSearch(match.params.location);
-  }, [OnSearch]);
-
-  console.log(search);
+  }, [OnSearch, match.params.location]);
 
   return (
     <Fragment>
