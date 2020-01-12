@@ -20,10 +20,10 @@ app.use('/search', require('./routes/api/search'));
 // Serve static assets i.e. React(Front End) build folder in production
 if (process.env.NODE_ENV === 'production') {
   //Set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static('frontend/build'));
 
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
+    res.sendFile(path.join(__dirname, './frontend/build/index.html'));
     // changed the above line from path.res(__dirname, 'client', 'build', 'index.html')); to allow reloading of the site & load through URL
   });
 }
