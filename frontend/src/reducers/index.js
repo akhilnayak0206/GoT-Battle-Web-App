@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
-import alert from './alert';
-import auth from './auth';
-import profile from './profile';
-import post from './post';
+import list from './list';
+import autocomplete from './autocomplete';
+import search from './search';
 
 export default combineReducers({
-  alert,
-  auth,
-  profile,
-  post
+  list,
+  autocomplete,
+  search
 });

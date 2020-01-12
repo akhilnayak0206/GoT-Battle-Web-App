@@ -1,43 +1,40 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Card, List, AutoComplete } from 'antd';
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
+import { Card, List, AutoComplete, Button } from 'antd';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { OnList, OnAutocomplete } from '../../actions/actions';
 
-const data = [
-  'Racing car sprays burning fuel into crowd.',
-  'Japanese princess to wed commoner.',
-  'Australian walks 100km after outback crash.',
-  'Man charged over missing wedding girl.',
-  'Los Angeles battles huge wildfires.',
-  'Racing car sprays burning fuel into crowd.',
-  'Japanese princess to wed commoner.',
-  'Australian walks 100km after outback crash.',
-  'Man charged over missing wedding girl.',
-  'Los Angeles battles huge wildfires.'
-];
+const SearchPage = ({
+  OnList,
+  list,
+  OnAutocomplete,
+  autocomplete,
+  history
+}) => {
+  useEffect(() => {
+    OnList();
+  }, [OnList]);
 
-const SearchPage = () => {
-  const [dataSource, setDataSource] = useState(data);
-  const [value, setValue] = useState('');
-
-  const onChange = changeValue => {
-    setValue(changeValue);
-    console.log('change', value, changeValue);
-  };
+  const onChange = changeValue => {};
 
   const onSearch = searchValue => {
-    console.log('search', searchValue);
+    if (searchValue) {
+      OnAutocomplete(searchValue);
+    }
   };
 
   const onSelect = selectValue => {
-    console.log('onSelect', selectValue);
+    history.push(`/battlelist/${selectValue}`);
   };
 
-  console.log('return', value);
   return (
     <Fragment>
       <section className='searchPageContainer'>
         <Card style={{ width: '100%' }}>
           <AutoComplete
-            dataSource={data}
+            dataSource={autocomplete}
             style={{ width: '100%' }}
             onSelect={onSelect}
             onSearch={onSearch}
@@ -45,16 +42,47 @@ const SearchPage = () => {
             placeholder='Search location'
           />
         </Card>
-        <List
-          size='large'
-          header={<div>Locations of all the battles</div>}
-          bordered
-          dataSource={data}
-          renderItem={item => <List.Item>{item}</List.Item>}
-        />
+        {Object.entries(list).length ? (
+          <List
+            size='large'
+            header={<h1>Locations of all the battles:</h1>}
+            bordered
+            dataSource={list}
+            renderItem={(data, key) => (
+              <List.Item key={key}>
+                <Link
+                  to={{
+                    pathname: `/battlelist/${data}`
+                  }}
+                >
+                  {data}
+                </Link>
+              </List.Item>
+            )}
+          />
+        ) : (
+          <Button onClick={() => OnList()}>
+            Click to Reload All Locations
+          </Button>
+        )}
       </section>
     </Fragment>
   );
 };
 
-export default SearchPage;
+SearchPage.propTypes = {
+  list: PropTypes.array.isRequired,
+  autocomplete: PropTypes.array.isRequired
+};
+
+const mapStateToProps = state => ({
+  // auth: state.auth,
+  // profile: state.profile
+  list: state.list,
+  autocomplete: state.autocomplete
+});
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, { OnList, OnAutocomplete })
+)(SearchPage);

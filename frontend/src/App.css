@@ -54,3 +54,102 @@ p {
   /* background-color: wheat; */
   color: white;
 }
+
+.battleListContainer {
+  display: flex !important ;
+  flex: 1;
+  align-items: flex-start;
+  margin: 25px;
+}
+
+.detailPageContainer {
+  display: flex !important ;
+  flex: 1;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+  background: url('./img/backgroundCard1.jpg') no-repeat center center/cover;
+}
+
+p.black {
+  font-family: 'Courier New', Courier;
+  color: black;
+  margin: 0px;
+}
+
+.cardAttacker {
+  display: flex !important ;
+  flex: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1.wonLost {
+  font-size: xx-large;
+}
+
+.cardDefender {
+  display: flex !important ;
+  flex: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img.attackerDefender {
+  border-radius: 50%;
+  width: 15vh;
+  height: 15vh;
+  /* background: url('./img/A.png') no-repeat center center/cover; */
+}
+
+h1.kingName {
+  text-align: center;
+}
+
+.ant-modal-header {
+  background-color: #001529;
+}
+
+.ant-modal-footer {
+  background-color: #001529;
+}
+
+.ant-modal-title {
+  color: white;
+}
+
+/* table */
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  color: white;
+}
+th,
+td {
+  padding: 5px;
+  text-align: left;
+  color: white;
+}
+
+@media only screen and (max-width: 425px) {
+  h1.detailPage {
+    position: fixed;
+    align-self: flex-start;
+  }
+}
+@media only screen and (min-width: 426px) {
+  h1.detailPage {
+    position: fixed;
+    align-self: flex-start;
+  }
+  h1.detailPage {
+    position: fixed;
+    align-self: flex-start;
+    font-size: xx-large;
+  }
+}
