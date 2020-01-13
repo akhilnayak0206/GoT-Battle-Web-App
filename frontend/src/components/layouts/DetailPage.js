@@ -47,7 +47,6 @@ const DetailPage = ({ location: { state } }) => {
               </Button>
             ]}
           >
-            >
             <table style={{ width: '100%' }}>
               <thead />
               <tbody>{obj && verticalTable}</tbody>
