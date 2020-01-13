@@ -1,4 +1,4 @@
-# Game Of Thrones Web App
+# Game Of Thrones Battle Web App
 
 This is a **MERN** project hosted with the help of **heroku**.  
 This is a website to search for battles based on location, then search for for the battle and then see who won or lost and then get full details of that battle.  
