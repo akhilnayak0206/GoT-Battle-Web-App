@@ -78,7 +78,7 @@ These are the routes available currently:
 
 ### Special Thanks
 
-Thanks CodingNinja for battles.csv file that contained all the data.  
+Thanks CareerNinja for battles.csv file that contained all the data.  
 Thanks [WallPaper Access](https://wallpaperaccess.com/game-of-thrones) for the background pic in details page.
 
 #### If you have any suggestion or doubt do let me know
