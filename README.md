@@ -3,7 +3,8 @@
 This is a **MERN** project hosted with the help of **heroku**.  
 This is a website to search for battles based on location, then search for for the battle and then see who won or lost and then get full details of that battle.  
 The Back End is made using **NodeJS & ExpressJS** using **MongoDB** as database.  
-The Front End is made using **ReactJS & Redux** for state management.
+The Front End is made using **ReactJS & Redux** for state management.  
+The **screenshots** for the website in **Mobile** and **PC** has been attached above in the folder of the **screenshot**
 
 ## Quick Start
 
